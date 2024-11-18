@@ -19,12 +19,16 @@ app.get('/todos', (req, res) => {
   res.json(todos);
 });
 
-/* 
-Q.3"
-GET /todos - Retrieve all to-do items or filter by completed status.
-after completing this part, you need to comment out the GET end point 
-already implemented here to test this new GET endpoint! 
-*/
+app.get('/todos', (req, res) => {
+  const { completed } = req.query;
+ if (completed !== undefined) {
+   const isCompleted = completed === 'true'; 
+   const filteredTodos = todos.filter(todo => todo.completed === isCompleted);
+    return res.json(filteredTodos);
+  }
+
+  res.json(todos);
+});
 
 
 // POST /todos - Add a new to-do item
