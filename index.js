@@ -10,8 +10,9 @@ app.use(express.json())
 // Sample data
 let todos = [
 
-{ id: 1, task: "Learn Node.js", completed: false, priority: "medium"  },
-{ id: 2, task: "Build a REST API", completed: false, priority: "medium"  }
+{ id: 1, task: "Learn Node.js", completed: true, priority: "medium"  },
+{ id: 1, task: "Learn how to cook", completed: false, priority: "medium"  },
+{ id: 2, task: "Build a REST API", completed: true, priority: "medium"  }
 ];
 
 // GET /todos - Retrieve all to-do items
