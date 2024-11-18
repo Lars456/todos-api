@@ -17,10 +17,6 @@ let todos = [
 
 // GET /todos - Retrieve all to-do items
 app.get('/todos', (req, res) => {
-  res.json(todos);
-});
-
-app.get('/todos', (req, res) => {
   const { completed } = req.query;
  if (completed !== undefined) {
    const isCompleted = completed === 'true'; 
